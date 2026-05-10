@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Register Page</title>
+
+<style>
+  body {
+    background-color: #ccccff;
+    font-family: Arial;
+    font-size: 14px;
+  }
+
+  h1 {
+    color: darkblue;
+    text-align: center;
+    font-size: 24px;
+    text-decoration: underline;
+  }
+
+  p {
+    text-align: center;
+    color: gray;
+  }
+
+  table {
+    background-color: white;
+    border: 2px solid darkblue;
+    padding: 20px;
+    margin: 0 auto;
+    width: 450px;
+  }
+
+  td {
+    padding: 6px;
+  }
+
+  .label-col {
+    width: 160px;
+    font-weight: bold;
+    color: darkblue;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"] {
+    border: 1px solid gray;
+    padding: 3px;
+    width: 200px;
+    font-size: 13px;
+  }
+
+  .submitbtn {
+    background-color: darkblue;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px 20px;
+    border: 2px outset #aaaaaa;
+    cursor: pointer;
+  }
+
+  .submitbtn:hover {
+    background-color: navy;
+  }
+
+  .resetbtn {
+    background-color: #dddddd;
+    font-size: 13px;
+    padding: 5px 15px;
+    border: 2px outset #aaaaaa;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+
+  #successDiv {
+    display: none;
+    background-color: #ccffcc;
+    border: 2px solid green;
+    padding: 15px;
+    width: 450px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+  }
+
+  #errorDiv {
+    display: none;
+    background-color: #ffcccc;
+    border: 2px solid red;
+    padding: 15px;
+    width: 450px;
+    margin: 20px auto;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: red;
+  }
+
+  .required {
+    color: red;
+  }
+
+  .note {
+    color: gray;
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  hr {
+    border: 1px solid darkblue;
+    width: 450px;
+  }
+</style>
+
+</head>
+<body>
+
+<br>
+<h1>User Registration Form</h1>
+<p>Please fill out all fields below. Fields marked with <span style="color:red;">*</span> are required.</p>
+<br>
+
+<table>
+  <tr>
+    <td colspan="2" style="background-color: darkblue; color: white; font-weight: bold; font-size: 15px; padding: 8px;">
+      &nbsp;&nbsp;Create New Account
+    </td>
+  </tr>
+
+  <tr><td colspan="2" style="height:10px;"></td></tr>
+
+  <tr>
+    <td class="label-col">Full Name: <span class="required">*</span></td>
+    <td>
+      <input type="text" id="fullName" name="fullName" maxlength="100" />
+      <br><span class="note">(First and Last name)</span>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="label-col">Email Address: <span class="required">*</span></td>
+    <td>
+      <input type="email" id="email" name="email" maxlength="100" />
+      <br><span class="note">(ex: name@email.com)</span>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="label-col">Password: <span class="required">*</span></td>
+    <td>
+      <input type="password" id="password" name="password" maxlength="50" />
+      <br><span class="note">(min 8 chars, 1 uppercase, 1 number, 1 special)</span>
+    </td>
+  </tr>
+
+  <tr>
+    <td class="label-col">Confirm Password: <span class="required">*</span></td>
+    <td>
+      <input type="password" id="confirmPw" name="confirmPw" maxlength="50" />
+    </td>
+  </tr>
+
+  <tr>
+    <td class="label-col">Age: <span class="required">*</span></td>
+    <td>
+      <input type="number" id="age" name="age" min="0" max="120" style="width:80px;" />
+      <br><span class="note">(must be 18 or older)</span>
+    </td>
+  </tr>
+
+  <tr><td colspan="2" style="height:8px;"></td></tr>
+
+  <tr>
+    <td colspan="2">
+      <div id="errorDiv" style="display:none; background-color:#ffcccc; border:2px solid red; padding:10px; color:red; font-weight:bold; font-size:13px;">
+        &#10007; <span id="errorMsg"></span>
+      </div>
+      <div id="successDiv" style="display:none; background-color:#ccffcc; border:2px solid green; padding:10px; color:green; font-weight:bold; font-size:13px; text-align:center;">
+        &#10003; Registration Successful! Welcome aboard!
+      </div>
+    </td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td>
+      <input type="button" class="submitbtn" value="Submit" onclick="validateForm()" />
+      <input type="reset" class="resetbtn" value="Clear Form" />
+    </td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="height:8px;"></td>
+  </tr>
+
+</table>
+
+<br>
+<hr>
+<p class="note">Copyright &copy; 2026 MyWebsite.com | All Rights Reserved</p>
+<br>
+
+<script src="script.js"></script>
+
+</body>
+</html>
